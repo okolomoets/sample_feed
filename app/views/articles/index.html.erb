@@ -1,0 +1,20 @@
+<div class="container" >
+
+  <%= link_to "New Article", new_article_path%>
+
+  <table class="articles_table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'article_table', collection: @articles, as: "article" %>
+    </tbody>
+  </table>
+
+</div>
+
+
