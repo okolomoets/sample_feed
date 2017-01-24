@@ -10,7 +10,8 @@ class SetArticleKeywords
       @keyword = keyword
       if _contain_word?
         article_keyword = ArticleKeyword.find_or_initialize_by(article: article, keyword: keyword)
-        article_keyword.update(entries_count: entries_count)
+        article_keyword.entries_count = entries_count
+        article_keyword.save
       end
 
     end
@@ -21,7 +22,8 @@ class SetArticleKeywords
       @article = article
       if _contain_word?
         article_keyword = ArticleKeyword.find_or_initialize_by(article: article, keyword: keyword)
-        article_keyword.update(entries_count: entries_count)
+        article_keyword.entries_count = entries_count
+        article_keyword.save
       end
     end
   end
