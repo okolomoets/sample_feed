@@ -20,3 +20,12 @@
 .container .row.keyword {
   padding: 10px;
 }
+
+.container {
+  p.article-from-black-list{
+    color: red;
+  }
+  p.article-from-white-list{
+    color: green;
+  }
+}

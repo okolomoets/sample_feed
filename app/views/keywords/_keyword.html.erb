@@ -1,10 +1,13 @@
 
 <div class="row keyword" data="<%=keyword.id%>">
 
-  <div class="col-md-9">
+  <div class="col-md-4">
     <%= keyword.title%>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
+    <%= keyword.word_type%>
+  </div>
+  <div class="col-md-4">
     <%= link_to "Delete", keyword_path(keyword), method: :delete, class: "btn btn-danger"%>
   </div>
 </div>

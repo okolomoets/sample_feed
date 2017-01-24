@@ -2,6 +2,8 @@
 <div class="article_<%=article.id%>">
   <h2 class="article-post"><%= article.title%></h2>
   <p class="article-post-meta"><%= article.created_at%> by <b><%= article.author%></b></p>
+  <%= black_list?(article).html_safe %>
+  <%= white_list?(article).html_safe %>
   <hr>
   <p><%= link_to "Show", article_path(article)%></p>
 </div>

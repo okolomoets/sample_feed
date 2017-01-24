@@ -11,5 +11,9 @@ module SampleFeed
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.active_record.observers = Dir.glob('app/observers/*')
+                                         .select{ |e| File.file? e }
+                                         .map{|file| file.split("/").last.split(".").first.to_sym}
   end
 end
