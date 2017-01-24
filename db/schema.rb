@@ -10,31 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170123211810) do
+ActiveRecord::Schema.define(version: 20170124022258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_keywords", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "keyword_id"
+    t.integer "entries_count", default: 0, null: false
+    t.index ["article_id", "keyword_id"], name: "index_article_keywords_on_article_id_and_keyword_id", using: :btree
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.string   "author"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "articles_keywords", id: false, force: :cascade do |t|
-    t.integer "article_id", null: false
-    t.integer "keyword_id", null: false
-    t.index ["article_id", "keyword_id"], name: "index_articles_keywords_on_article_id_and_keyword_id", using: :btree
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "score",      default: 0, null: false
   end
 
   create_table "keywords", force: :cascade do |t|
     t.string   "title"
-    t.integer  "rating"
+    t.integer  "score",      default: 0, null: false
     t.integer  "word_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

@@ -1,5 +1,9 @@
 class Article < ApplicationRecord
-  has_and_belongs_to_many :keywords
+  has_many :article_keywords
+  has_many :keywords, through: :article_keywords
+
+  scope :with_keywords, ->(keyword_ids) { joins(:keywords).where(keywords: {id: keyword_ids}) }
+  scope :sort_by_score, ->{order(score: :desc)}
 
   def associate_with_keywords
     service = SetArticleKeywords.new({article: self})
@@ -13,4 +17,10 @@ class Article < ApplicationRecord
   def in_white_list?
     self.keywords.pluck(:word_type).include?("white_list")
   end
+
+
+  def entries_count_of_keyword(keyword)
+    self.article_keywords.where(keyword: keyword).first.entries_count
+  end
+
 end

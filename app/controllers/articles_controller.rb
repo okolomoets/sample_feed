@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   before_action :_set_article, only: [:show]
 
   def index
-    @articles = Article.includes(:keywords)
+    @articles = Article.includes(:keywords).sort_by_score
+    respond_to do |format|
+      format.html { }
+      format.js { render layout: false }
+    end
   end
 
   def show
