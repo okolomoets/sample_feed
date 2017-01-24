@@ -49,18 +49,18 @@ Article.create(
 
 Keyword.create(
            title: "shed",
-           word_type: Keyword.words_types.symbolize_keys.keys.sample
+           word_type: Keyword.word_types.symbolize_keys.keys.sample
 )
 Keyword.create(
            title: "natural",
-           word_type: Keyword.words_types.symbolize_keys.keys.sample
+           word_type: Keyword.word_types.symbolize_keys.keys.sample
 )
 
 Keyword.create(
     title: "photo",
-    word_type: Keyword.words_types.symbolize_keys.keys.sample
+    word_type: Keyword.word_types.symbolize_keys.keys.sample
 )
 Keyword.create(
     title: "justice",
-    word_type: Keyword.words_types.symbolize_keys.keys.sample
+    word_type: Keyword.word_types.symbolize_keys.keys.sample
 )

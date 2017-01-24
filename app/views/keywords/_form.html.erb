@@ -1,0 +1,6 @@
+<%= form_for @keyword do |form| %>
+    Title: <%= form.text_field :title %>
+    Word Type: <%= form.select :word_type, collection: Keyword.word_types.keys.to_a %>
+
+    <%= form.submit "Save", class: "btn btn-success" %>
+<%end%>

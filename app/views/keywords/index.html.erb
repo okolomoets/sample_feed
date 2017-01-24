@@ -1,0 +1,10 @@
+<div class="container" >
+
+  <%= link_to "New Keyword", new_keyword_path, class: "btn btn-success"%>
+
+  <div class="row">
+
+    <%= render partial: 'keyword', collection: @keywords, as: "keyword" %>
+  </div>
+
+</div>

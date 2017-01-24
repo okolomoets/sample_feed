@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170123211810) do
   create_table "keywords", force: :cascade do |t|
     t.string   "title"
     t.integer  "rating"
-    t.string   "word_type"
+    t.integer  "word_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

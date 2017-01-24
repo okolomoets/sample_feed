@@ -3,7 +3,7 @@ class CreateKeywords < ActiveRecord::Migration[5.0]
     create_table :keywords do |t|
       t.string  :title
       t.integer :rating
-      t.string  :word_type
+      t.integer  :word_type
 
       t.timestamps
     end
