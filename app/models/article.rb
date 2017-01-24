@@ -7,10 +7,10 @@ class Article < ApplicationRecord
   end
 
   def in_black_list?
-    self.keywords.where(word_type: :black_list).any?
+    self.keywords.pluck(:word_type).include?("black_list")
   end
 
   def in_white_list?
-    self.keywords.where(word_type: :white_list).any?
+    self.keywords.pluck(:word_type).include?("white_list")
   end
 end

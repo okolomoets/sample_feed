@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :_set_article, only: [:show]
 
   def index
-    @articles = Article.all
+    @articles = Article.includes(:keywords)
   end
 
   def show
