@@ -1,13 +1,8 @@
 
 
-<tr class="article_<%=article.id%>">
-  <td class="title">
-    <%= article.title%>
-  </td>
-  <td class="author">
-    <%= article.author%>
-  </td>
-  <td>
-    <%= link_to "Show", article_path(article)%>
-  </td>
-</tr>
+<div class="article_<%=article.id%>">
+  <h2 class="article-post"><%= article.title%></h2>
+  <p class="blog-post-meta"><%= article.created_at%> by <a href="#"><%= article.author%></a></p>
+  <hr>
+  <p><%= link_to "Show", article_path(article)%></p>
+</div>

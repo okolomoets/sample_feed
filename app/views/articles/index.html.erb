@@ -1,19 +1,18 @@
+<div class="feed_header">
+  <div class="container">
+    <h1 class="feed-title">Feed</h1>
+    <p class="lead feed-description">Feed Description.</p>
+  </div>
+</div>
+
 <div class="container" >
 
   <%= link_to "New Article", new_article_path%>
 
-  <table class="articles_table">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Author</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
+  <div class="row">
+
       <%= render partial: 'article_table', collection: @articles, as: "article" %>
-    </tbody>
-  </table>
+  </div>
 
 </div>
 

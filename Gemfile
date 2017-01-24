@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bootstrap-sass'
+gem 'bootstrap_form'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-rails'
